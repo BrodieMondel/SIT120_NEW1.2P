@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Concepts</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Responsive Styles */
+    @media screen and (max-width: 600px) {
+      body {
+        font-size: 16px; /* Adjust the font size for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JavaScript Concepts</h1>
+    
+    <div class="output">
+      <script>
+      // Prompt the user for their name
+      const userName = prompt("Please enter your name:");
+
+      // Check if the user entered a name
+      if (userName !== null && userName !== "") {
+        // Create a new string based on user input
+        const str = `Hello, ${userName}!`;
+        
+        // 5 String methods
+        const uppercaseStr = str.toUpperCase();
+        const lowercaseStr = str.toLowerCase();
+        const slicedStr = str.slice(7); // Extracts substring from 8th character
+        const replacedStr = str.replace(userName, "Good Afternoon!");
+        const trimmedStr = str.trim(); // reomve any whitespace 
+    
+
+      // Prompt the user for a number
+      const userInput = prompt("Please enter a decimal value:");
+
+      // Check if the user entered a valid number
+      if (!isNaN(userInput)) {
+        const num = parseFloat(userInput);
+      
+      const parsedNum = parseFloat(userInput); // parses string to float
+      
+
+      // Perform operations on the user's number
+      const roundedNum = num.toFixed(3);
+      const integerPart = parseInt(roundedNum); // parses rounded num to int
+      const exponentialNum = num.toExponential(2);
+      const squareRoot = Math.sqrt(num); // square root of num
+      const absoluteValue = Math.abs(num); // absolute version of num
+
+
+      // Prompt the user for an array of fruits
+      const userFruitsInput = prompt("Please enter a list of fruits separated by commas:");
+
+      // Split user input into an array of fruits
+      const userFruitsArray = userFruitsInput.split(",");
+
+      // Check if the user entered a valid array of fruits
+      if (Array.isArray(userFruitsArray) && userFruitsArray.length > 0) {
+        // 5 Array methods using user's input
+        const joinedFruits = userFruitsArray.join(" - "); // joins elements into a single string 
+        const slicedFruits = userFruitsArray.slice(1, 3); // elements from index 1 - 2
+        const reversedFruits = userFruitsArray.slice().reverse(); // Copy the array before reversing to avoid modifying the original
+        const sortedFruits = userFruitsArray.slice().sort(); // Copy the array before sorting to avoid modifying the original
+        const mappedFruits = userFruitsArray.map(fruit => fruit.trim().toUpperCase()); // Create a new array with uppercase fruits
+    
+        const dateFormatChoice = prompt("Choose a date format: 1 for 'toDateString', 2 for 'toTimeString', 3 for 'toISOString', 4 for 'toUTCString'");
+
+          // Check the user's choice and format the date accordingly
+          let formattedDate;
+          const currentDate = new Date();
+          if (dateFormatChoice === "1") {
+            formattedDate = currentDate.toDateString();
+          } else if (dateFormatChoice === "2") {
+            formattedDate = currentDate.toTimeString();
+          } else if (dateFormatChoice === "3") {
+            formattedDate = currentDate.toISOString();
+          } else if (dateFormatChoice === "4") {
+            formattedDate = currentDate.toUTCString();
+          } else if (dateFormatChoice === "5") {
+            formattedDate = currentDate.toLocaleDateString();
+          } else {
+            formattedDate = "Invalid date format choice.";
+          }
+    
+          
+        // 2 Function methods using user's input
+        function greet(name) {
+            return `Hello, ${name}!`;
+          }
+          
+          const greetFunction = greet.bind(null, userName); // Bind user's name as the argument
+          const functionString = greetFunction.toString();
+
+          function calculateSquare(number) {
+            return Math.pow(number, 2);
+          }
+
+          const squaredNumber = calculateSquare(userInput);
+    
+    
+        // Output
+        console.log(uppercaseStr);
+        console.log(lowercaseStr);
+        console.log(slicedStr);
+        console.log(replacedStr);
+        console.log(trimmedStr);
+
+        console.log(roundedNum);
+        console.log(integerPart);
+        console.log(parsedNum);
+        console.log(squareRoot);
+        console.log(absoluteValue);
+
+        console.log(joinedFruits);
+        console.log(slicedFruits);
+        console.log(reversedFruits);
+        console.log(sortedFruits);
+        console.log(mappedFruits);
+
+        console.log(formattedDate);
+
+        console.log(greetFunction() + "");
+        console.log(functionString);
+        console.log(squaredNumber);
+
+      } else {
+        // Handle the case where the user did not enter a name
+        console.log("You did not enter a name. Please refresh the page and try again.");
+      }
+    
+      } else {
+        // Handle the case where the user did not enter a valid number
+        console.log("You did not enter a valid number. Please refresh the page and try again.");
+      }
+
+      } else {
+        // Handle the case where the user did not enter a valid array of fruits
+        console.log("You did not enter a valid list of fruits. Please refresh the page and try again.");
+      }
+        
+      </script>
+    </div>
+  </div>
+</body>
+</html>
+
+  
+</body>
+</html>
